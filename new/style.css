@@ -1,0 +1,185 @@
+
+@import "http://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css";
+@import "http://fonts.googleapis.com/css?family=Lobster";
+@import "http://fonts.googleapis.com/css?family=Cabin";
+@import "http://fonts.googleapis.com/css?family=Inconsolata";
+
+#css-loaded { 
+  width: 1px;
+}
+
+html, body { 
+  height: 100%; 
+  font-family: 'Cabin', Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  line-height: 25px;
+}
+section {
+  text-align: center;
+  width: 100%; 
+}
+.separator { 
+  height: 10%; 
+  border-top-color: black;
+}
+.separator:before {
+  content: ""; 
+  border-left: 20px solid transparent; 
+  border-right: 20px solid transparent; 
+  border-top: 20px solid;
+  border-top-color: inherit;
+  height: 0px; 
+  position: relative; 
+  display: block;
+  margin-bottom: -20px;
+  top: 0px; 
+  margin: auto;
+  width: 0px; 
+}
+section h2 {
+  font-family: 'Lobster', Georgia, Times, serif;
+  font-size: 55px;
+  line-height: 100px;
+  margin: 0 auto 1em;
+}
+section h2:after {
+  content: "";
+  display: block;
+  margin: 0 auto;
+  width: 100px;
+  height: 0px;
+  border: 1px solid black;
+}
+footer {
+  display: block;
+  height: 30px;
+  width: 100%;
+  background-color: black;
+}
+#home { 
+  background-color: black; 
+  border-top-color: black;
+  height: 90%; 
+}
+#home h1 { 
+  display: table; 
+  height: 100%; 
+  margin: auto; 
+}
+#home h1 span { 
+  color: #ccc; 
+  display: table-cell; 
+  font-size: 40px;
+  font-weight: bold;
+  text-transform: lowercase;
+  vertical-align: middle; 
+}
+#home h1 span#primer-apellido { 
+  color: teal; 
+}
+#home + .separator {
+  background-color: white;
+  border-top-color: black;
+}
+#research {
+  background-color: white;
+}
+#research + .separator {
+  background-color: rgb(221, 118, 116);
+  border-top-color: white;
+}
+#teaching {
+  background-color: rgb(221, 118, 116);
+}
+#teaching + .separator {
+  background-color: rgb(51, 178, 148);
+  border-top-color: rgb(221, 118, 116);
+}
+#contact {
+  background-color: rgb(51, 178, 148);
+}
+#contact + .separator {
+  border-top-color: rgb(51, 178, 148);
+  background-color: white;
+}
+#me {
+  background-color: white;
+}
+section ol {
+  list-style-type: decimal;
+  padding-left: 1.3em;
+  text-align: left;
+}
+section li {
+  margin-bottom: 1em;
+}
+section em {
+  font-style: italic;
+}
+section strong {
+  font-weight: bold;
+}
+section .contents {
+  max-width: 580px;
+  margin: auto;
+  padding-bottom: 100px;
+  position: relative;
+}
+section .contents h3:first-child {
+  margin: 0em 0 1em;
+}
+section .contents h3 {
+  font-family: 'Lobster', Georgia, Times, serif;
+  font-size: 25px;
+  margin: 2.5em 0 1em;
+}
+table {
+  text-align: left;
+  margin: auto;
+  table-layout: fixed;
+}
+section td {
+  padding: 10px 10px;
+  width: 50%;
+}
+.semester {
+  text-align: right;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+a:hover {
+  text-decoration: underline;
+}
+#contact .contents {
+  text-align: center;
+}
+#contact .email {
+  display: block;
+  margin-top: 2em;
+  font-size: 23px;
+  font-family: 'Inconsolata', sans-serif;
+}
+#map-container {
+  display:none;
+  width: 100%;
+  padding-bottom: 25px;
+}
+#map {
+  width: 100%;
+  height: 600px;
+}
+
+#photo {
+  margin: 0 auto -25px;
+  background: transparent url("me.png") no-repeat;
+  background-position: 50% 25%;
+  background-size: 200% auto;
+  width: 200px;
+  height: 250px;
+  -moz-border-radius: 200px / 250px;
+  -webkit-border-radius: 200px / 250px;
+  border-radius: 200px / 250px;
+  border: 5px solid black;
+}
