@@ -48,7 +48,7 @@ section h2:after {
   margin: 0 auto;
   width: 100px;
   height: 0px;
-  border: 1px solid black;
+  border: 1px solid;
 }
 footer {
   display: block;
@@ -85,21 +85,22 @@ footer {
   background-color: white;
 }
 #research + .separator {
-  background-color: rgb(221, 118, 116);
   border-top-color: white;
+  background-color: rgb(51, 178, 148);
 }
 #teaching {
-  background-color: rgb(221, 118, 116);
+  background-color: rgb(51, 178, 148);
 }
 #teaching + .separator {
-  background-color: rgb(51, 178, 148);
-  border-top-color: rgb(221, 118, 116);
+  border-top-color: rgb(51, 178, 148);
+  background-color: black;
 }
 #contact {
-  background-color: rgb(51, 178, 148);
+  background-color: black;
+  color: #ddd;
 }
 #contact + .separator {
-  border-top-color: rgb(51, 178, 148);
+  border-top-color: black;
   background-color: white;
 }
 #me {
