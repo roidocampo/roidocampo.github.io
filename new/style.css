@@ -163,6 +163,7 @@ a:hover {
   font-family: 'Inconsolata', sans-serif;
 }
 #map-container {
+  display: none;
   width: 100%;
   padding-bottom: 25px;
 }
