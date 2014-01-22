@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+
+<meta charset="utf-8">
+<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/paper.js/0.9.12/paper.js"></script>
+<script type="text/javascript" src="sierpinski9.turtle"></script>
+<script type="text/javascript">
+window.onload = function() {
+  var canvas = document.getElementById('myCanvas');
+  paper.setup(canvas);
+  var path = new paper.Path();
+  path.strokeColor = 'black';
+  var pos = new paper.Point(100, 100);
+  var dir = new paper.Point(0,1.5);
+  var angle = 60;
+  var speed = 5;
+  var count = 0;
+  path.moveTo(pos);
+  paper.view.onFrame = function(event) {
+    for (var i=0; i<speed; i++) {
+      count++;
+      switch (turtle_code.charAt(count)) {
+        case "F":
+          pos = pos.add(dir);
+          path.lineTo(pos);
+          break;
+        case "+":
+          dir = dir.rotate(angle);
+          break;
+        case "-":
+          dir = dir.rotate(-angle);
+          break;
+      }
+    }
+  }
+}
+</script>
+
+<body>
+
+<canvas id="myCanvas" resize></canvas>
