@@ -1,0 +1,155 @@
+body {
+  background: black url(i/back.gif) repeat top left;
+  color: #ddd;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+}
+
+div#container {
+  position: relative;
+  width: 480px;
+  height: auto;
+  margin: 90px auto;
+}
+
+
+/*************
+ *           *
+ *  #181a24  *
+ *  #14151e  *
+ *  #101118  *
+ *  #0c0c12  *
+ *  #08080c  *
+ *  #040406  *
+ *  #000000  *
+ *           *
+ *************/
+
+#frame1 {
+  margin-left: 80px;
+}
+
+#frame2 { border: 1px solid #181a24; }
+#frame3 { border: 1px solid #14151e; }
+#frame4 { border: 1px solid #101118; }
+#frame5 { border: 1px solid #0c0c12; }
+
+#frame6 { 
+  border: 4px solid #08080c; 
+  background-color: #14151e;
+}
+
+#frame8 {
+  background-color: #14151e;
+}
+
+#frame9 {
+  margin: 85px 0px 50px;
+  height: 65px;
+  background-color: #08080c;
+}
+
+#fullname {
+  position: relative;
+  font-size: 20pt;
+  font-weight: normal;
+  margin: 0px;
+  top: -0.6em;
+}
+
+span#name, span#secondlastname {
+  color: teal;
+}
+
+.access {
+  display: none;
+}
+
+div#title {
+  font-size: 10pt;
+}
+
+
+div#navigation {
+  position: absolute;
+  top: 33px;
+  left: 0px;
+}
+
+.navitem {
+  display: block;
+  font-size: 10pt;
+  margin-top: 6px;
+  background-color: #08080c;
+  border-left: 3px solid #066;
+  border-right: 3px solid #040406;
+  width: 68px;
+  padding: 2px 7px;
+  text-align: left;
+  text-decoration: none;
+  color: #ccc;
+}
+
+.navitem:hover {
+  border-left: 3px solid #ddd;
+}
+
+.section {
+  font-size: 10pt;
+  margin: 0px 0px 20px;
+  text-align: left;
+}
+
+.section h3 {
+  position: relative;
+  margin: 0px;
+  padding: 0px 25px;
+  height: 15px;
+  font-weight: normal;
+  font-size: 14pt;
+  background-color: #08080c;
+}
+
+.sectitle {
+  position: relative;
+  top: -0.6em;
+  left: 0;
+}
+
+.seccontent {
+  margin-top: 8px;
+  padding: 0px 30px;
+}
+
+.section address {
+  font-style: normal;
+}
+
+.section a {
+  color: teal;
+  text-decoration: none;
+}
+
+.section a:hover {
+  text-decoration: underline;
+}
+
+.secclose {
+  position: absolute;
+  right: 20px;
+  top: -0.6em;
+  font-weight: normal;
+  font-size: 10pt;
+  text-decoration: none;
+  color: teal;
+}
+
+a.secclose:hover {
+  text-decoration: none;
+  color: #900;
+}
+
+#contact, #research, #teaching {
+  display: none;
+}
+
