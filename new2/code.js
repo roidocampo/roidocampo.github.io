@@ -1,6 +1,6 @@
 $(function(){
 
-var avaliableSections = {'/contact':'', '/research':'','/teaching':''}
+var avaliableSections = {'contact':'', 'research':'','teaching':''}
 var currentSection = 'none';
 var nextSection = 'none';
 var slidingInProgress = false;
@@ -22,7 +22,7 @@ function toggleSection(nwsec, ev) {
 function hideSection() {
   if (currentSection in avaliableSections) {
     $("#close").hide(10, function(){
-      $.when( $("#\\" + currentSection).slideUp().delay(150) ).done(showSection);
+      $.when( $("#" + currentSection).slideUp().delay(150) ).done(showSection);
     });
   }
   else showSection();
@@ -36,7 +36,7 @@ function showSection() {
     return;
   }
   if (nextSection in avaliableSections) {
-    $("#\\" + nextSection).slideDown(function(){
+    $("#" + nextSection).slideDown(function(){
       $("#close").show(10, endSliding);
     });
   }
@@ -48,9 +48,9 @@ function endSliding() {
   slidingInProgress = false;
 }
 
-$("#nav-teaching").click(function(ev){ toggleSection("/teaching", ev); });
-$("#nav-research").click(function(ev){ toggleSection("/research", ev); });
-$("#nav-contact").click(function(ev){ toggleSection("/contact", ev); });
+$("#nav-teaching").click(function(ev){ toggleSection("teaching", ev); });
+$("#nav-research").click(function(ev){ toggleSection("research", ev); });
+$("#nav-contact").click(function(ev){ toggleSection("contact", ev); });
 
 window.onhashchange = locationHashChanged;
 
