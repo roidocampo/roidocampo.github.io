@@ -6,7 +6,7 @@ var nextSection = 'none';
 var slidingInProgress = false;
 
 function locationHashChanged() {  
-  toggleSection(location.hash.substring(1));
+  toggleSection(location.hash.substring(2));
 }
 
 function toggleSection(nwsec, ev) {  
@@ -33,14 +33,18 @@ function showSection() {
     nextSection = 'none';
     history.pushState('', document.title, window.location.pathname);
     endSliding(); 
-    return;
   }
-  if (nextSection in avaliableSections) {
+  else if (nextSection in avaliableSections) {
+    history.pushState('', document.title, 
+        window.location.pathname + "#/" + nextSection);
     $("#" + nextSection).slideDown(function(){
       $("#close").show(10, endSliding);
     });
   }
-  else endSliding();
+  else {
+    history.pushState('', document.title, window.location.pathname);
+    endSliding();
+  }
 }
 
 function endSliding() {
@@ -51,6 +55,7 @@ function endSliding() {
 $("#nav-teaching").click(function(ev){ toggleSection("teaching", ev); });
 $("#nav-research").click(function(ev){ toggleSection("research", ev); });
 $("#nav-contact").click(function(ev){ toggleSection("contact", ev); });
+$("#close").click(function(ev){ toggleSection("none", ev); });
 
 window.onhashchange = locationHashChanged;
 
