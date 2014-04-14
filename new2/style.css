@@ -40,7 +40,11 @@ a:hover { text-decoration: underline; }
  * Background shadow
  * ============================================== */
 
-html { box-shadow: 0em 0em 6.25em 0em rgba(0, 0, 0, 0.3) inset; }
+html {
+  -webkit-box-shadow : inset 0em 0em 6.25em 0em rgba(0, 0, 0, 0.3);
+  -moz-box-shadow    : inset 0em 0em 6.25em 0em rgba(0, 0, 0, 0.3);
+  box-shadow         : inset 0em 0em 6.25em 0em rgba(0, 0, 0, 0.3);
+}
 
 /* ==============================================
  * Header
@@ -109,7 +113,6 @@ html { box-shadow: 0em 0em 6.25em 0em rgba(0, 0, 0, 0.3) inset; }
   cursor          : pointer;
   text-decoration : none;
   text-shadow     : 0 0 0.1875em #000;
-  filter          : dropshadow(color=#000, offx=0, offy=-1);
 }
 
 /* ==============================================
@@ -192,5 +195,10 @@ td:first-child { text-align: right; }
  * ============================================== */
 
 @media (max-width: 400px) {
+  html {
+    -webkit-box-shadow : none;
+    -moz-box-shadow    : none;
+    box-shadow         : none;
+  }
   #header h1 { font-size: 2em; }
 }
