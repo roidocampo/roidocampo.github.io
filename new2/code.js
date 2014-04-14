@@ -1,64 +1,58 @@
 $(function(){
 
-var avaliableSections = {'contact':'', 'research':'','teaching':''}
-var currentSection = 'none';
-var nextSection = 'none';
+var avaliableSections = {"#contact":"", "#research":"","#teaching":""}
+var currentSection = "";
+var nextSection = "";
 var slidingInProgress = false;
 
-function locationHashChanged() {  
-  toggleSection(location.hash.substring(2));
-}
-
-function toggleSection(nwsec, ev) {  
-  if (slidingInProgress) { return; }
-  slidingInProgress = true;
-  nextSection = nwsec;
-  if (currentSection == nextSection) { 
-    ev.preventDefault();
+function hashChanged(newSection, ev) {  
+  if (newSection == undefined) {
+    newSection = location.hash;
+    if (currentSection == newSection)
+      return;
   }
+  if (slidingInProgress) return;
+  slidingInProgress = true;
+  nextSection = newSection;
+  if (ev)
+    ev.preventDefault();
+  if (!(nextSection in avaliableSections) || (currentSection == nextSection))
+    nextSection = "";
+  if (nextSection != location.hash)
+    history.pushState('', document.title, 
+        window.location.pathname + nextSection);
   hideSection();
 }
 
 function hideSection() {
-  if (currentSection in avaliableSections) {
-    $("#close").hide(10, function(){
-      $.when( $("#" + currentSection).slideUp().delay(150) ).done(showSection);
+  if (currentSection in avaliableSections)
+    $("#close").hide(10, function() {
+      $.when( $(currentSection).slideUp().delay(150) ).done(showSection);
     });
-  }
   else showSection();
 }
 
 function showSection() {
-  if (currentSection == nextSection) { 
-    nextSection = 'none';
-    history.pushState('', document.title, window.location.pathname);
-    endSliding(); 
-  }
-  else if (nextSection in avaliableSections) {
-    history.pushState('', document.title, 
-        window.location.pathname + "#/" + nextSection);
-    $("#" + nextSection).slideDown(function(){
+  if (nextSection in avaliableSections)
+    $(nextSection).slideDown(function(){
       $("#close").show(10, endSliding);
     });
-  }
-  else {
-    history.pushState('', document.title, window.location.pathname);
-    endSliding();
-  }
+  else endSliding();
 }
 
 function endSliding() {
   currentSection = nextSection;
   slidingInProgress = false;
+  hashChanged();
 }
 
-$("#nav-teaching").click(function(ev){ toggleSection("teaching", ev); });
-$("#nav-research").click(function(ev){ toggleSection("research", ev); });
-$("#nav-contact").click(function(ev){ toggleSection("contact", ev); });
-$("#close").click(function(ev){ toggleSection("none", ev); });
+$("#nav-teaching").click(function(ev){ hashChanged("#teaching", ev); });
+$("#nav-research").click(function(ev){ hashChanged("#research", ev); });
+$("#nav-contact").click(function(ev){ hashChanged("#contact", ev); });
+$("#close").click(function(ev){ hashChanged("", ev); });
 
-window.onhashchange = locationHashChanged;
+window.onhashchange = function() { hashChanged(); };
 
-locationHashChanged();
+hashChanged();
 
 });
