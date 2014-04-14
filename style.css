@@ -165,7 +165,7 @@ ol {
 }
 
 li { margin-bottom: 1em; }
-em { font-style: italic; }
+em { color: #ea4858; }
 strong { font-weight: bold; }
 
 /* ==============================================
