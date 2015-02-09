@@ -150,6 +150,7 @@ html {
  * ============================================== */
 
 address { margin-bottom: 1.5em; }
+address sup { font-size: .7em; vertical-align: super }
 
 /* ==============================================
  * Research section
