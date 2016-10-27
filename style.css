@@ -64,7 +64,7 @@ html {
 }
 
 #header h1 span { display: table-cell; }
-#header h2 { font-size: 1.125em; }
+#header .subtitle { font-size: 1.125em; }
 #primer-apellido { color: #ea4858; }
 
 /* ==============================================
@@ -126,7 +126,7 @@ html {
   margin-bottom : 3em;
 }
 
-.section h3 {
+.section h2 {
   width              : 100%;
   height             : 6.25em;
   line-height        : 6.25em;
@@ -140,7 +140,7 @@ html {
   letter-spacing     : 0.1em;
 }
 
-.section h4 {
+.section h3 {
   margin      : 2.5em 0 1em;
   font-weight : 700;
 }
